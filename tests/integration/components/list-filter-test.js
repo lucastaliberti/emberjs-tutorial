@@ -40,11 +40,10 @@ test('should initially load all listings', function(assert){
   })
 })
 
-test('should update with machting listings', (assert) => {
+test('should update with machting listings', function (assert){
   this.on('filterByCity', (val) => {
-    if(val === ''){
+    if(val === '')
       return RSVP.resolve(ITEMS)
-    }
 
     return RSVP.resolve(FILTERED_ITEMS)
   })
@@ -65,8 +64,8 @@ test('should update with machting listings', (assert) => {
   this.$('.list-filter input').val('San').keyup();
 
   return wait().then(() => {
-    assert.equal(this.$('city').length,1)
-    assert.equal(this.$('city').first().text().trim(),'San Francisco')
+    assert.equal(this.$('.city').length,1)
+    assert.equal(this.$('.city').first().text().trim(),'San Francisco')
   })
 })
 
