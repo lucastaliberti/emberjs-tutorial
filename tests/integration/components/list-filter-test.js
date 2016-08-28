@@ -68,21 +68,3 @@ test('should update with machting listings', function (assert){
     assert.equal(this.$('.city').first().text().trim(),'San Francisco')
   })
 })
-
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
-  this.render(hbs`{{list-filter}}`);
-
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#list-filter}}
-      template block text
-    {{/list-filter}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
-});
